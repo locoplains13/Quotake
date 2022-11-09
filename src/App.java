@@ -41,18 +41,20 @@ public class App extends Application{
             addButtonStage.setTitle("Add Quote");
             addButtonStage.setScene(quoteInputs);
             addButtonStage.show();
+            
+            confirmButton.setOnAction(e1 -> {
+                Author a = new Author(authorTextField.getText());
+                Quotes q = new Quotes(quoteTextField.getText(), a.getAuthor());
+                addButtonStage.close();
+                System.out.println(q.toString());
+            });
         });
 
         /*
          * this method will add author and quote objects and print what the user input
          */
-        confirmButton.setOnAction(e -> {
-            Author a = new Author(authorTextField.getText());
-            Quotes q = new Quotes(quoteTextField.getText(), a.getAuthor());
-            System.out.println(q.toString());
-
-        });
         
+
         StackPane layout = new StackPane();
         layout.getChildren().add(addButton);
 
