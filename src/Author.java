@@ -20,6 +20,10 @@ public class Author {
         authorQs.add(q);
     }
 
+    public void removeQuote(Quotes q){
+        authorQs.remove(q);
+    }
+
     public String toString(){
         String statement;
         statement = getAuthor() + " quotes: \n";
