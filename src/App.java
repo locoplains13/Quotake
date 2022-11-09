@@ -1,10 +1,12 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 
-public class App extends Application{
+public class App extends Application implements EventHandler<ActionEvent>{
 
     Button button;
     public static void main(String[] args) throws Exception {
@@ -16,6 +18,8 @@ public class App extends Application{
         primaryStage.setTitle("Quotake");
         button = new Button("click me");
 
+        button.setOnAction(this);
+
         StackPane layout = new StackPane();
         layout.getChildren().add(button);
 
@@ -23,5 +27,10 @@ public class App extends Application{
 
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    @Override
+    public void handle(ActionEvent event) {
+        
     }
 }
