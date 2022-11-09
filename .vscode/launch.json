@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Author",
+            "request": "launch",
+            "mainClass": "Author",
+            "projectName": "Quotake_3af47a31"
+        },
+        {
+            "type": "java",
+            "name": "Launch Quotes",
+            "request": "launch",
+            "mainClass": "Quotes",
+            "projectName": "Quotake_3af47a31"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

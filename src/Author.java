@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Author {
     private String quoteAuthor;
-    private ArrayList<String> authorQs;
+    private ArrayList<Quotes> authorQs = new ArrayList<Quotes>();
 
     public Author(String author){
         quoteAuthor = author;
@@ -16,8 +16,16 @@ public class Author {
         this.quoteAuthor = newAuthor;
     }
 
-    public void addQuote(String q){
+    public void addQuote(Quotes q){
         authorQs.add(q);
     }
 
+    public String toString(){
+        String statement;
+        statement = getAuthor() + " quotes: \n";
+        for(int i = 0; i < authorQs.size(); i++){
+            statement += authorQs.get(i).toString();
+        }
+        return statement;
+    }
 }
