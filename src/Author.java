@@ -24,6 +24,10 @@ public class Author {
         authorQs.remove(q);
     }
 
+    public boolean isEmpty(){
+        return authorQs.isEmpty();
+    }
+
     public String toString(){
         String statement;
         statement = getAuthor() + " quotes: \n";

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TextFieldExample",
+            "request": "launch",
+            "mainClass": "TextFieldExample",
+            "projectName": "Quotake_3af47a31"
+        },
+        {
+            "type": "java",
             "name": "Launch Author",
             "request": "launch",
             "mainClass": "Author",
