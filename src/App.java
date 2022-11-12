@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -18,6 +19,10 @@ public class App extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        ArrayList<Author> authorList = new ArrayList<Author>();
+        ArrayList<Quotes> quoteList = new ArrayList<Quotes>();
+
         primaryStage.setTitle("Quotake");
         addButton = new Button("+");
         Label authorLabel = new Label("Author: ");
@@ -44,7 +49,9 @@ public class App extends Application{
             
             confirmButton.setOnAction(e1 -> {
                 Author a = new Author(authorTextField.getText());
+                authorList.add(a);
                 Quotes q = new Quotes(quoteTextField.getText(), a.getAuthor());
+                quoteList.add(q);
                 addButtonStage.close();
                 System.out.println(q.toString());
             });
@@ -53,10 +60,14 @@ public class App extends Application{
         /*
          * this method will add author and quote objects and print what the user input
          */
-        
 
-        StackPane layout = new StackPane();
-        layout.getChildren().add(addButton);
+        GridPane layout = new GridPane();
+        layout.addRow(0, addButton);
+        Label emptyListLabel = new Label("No quotes registered at this time");
+
+        if(quoteList.isEmpty()){
+            layout.addColumn(1, emptyListLabel);
+        }
 
         Scene scene = new Scene(layout, 500, 300);
 
