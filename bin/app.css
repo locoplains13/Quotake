@@ -1,0 +1,17 @@
+.button{
+    -fx-background-color:Green;
+    -fx-text-fill:White;
+    -fx-border-color:rgb(26, 156, 26);
+    -fx-font-size:20;
+}
+
+.label{
+    -fx-background-color:Black;
+    -fx-text-fill:white;
+    -fx-font-size:20;
+    -fx-font-style:Arial;
+}
+
+.vbox{
+    -fx-background-color:Gray;
+}
